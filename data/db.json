@@ -1,0 +1,12 @@
+{
+  "ids": {
+    "Homebase": 4
+  },
+  "models": {
+    "Homebase": {
+      "1": "{\"name\":\"The BGs\",\"id\":1}",
+      "2": "{\"name\":\"Los Bundidos\",\"id\":2}",
+      "3": "{\"name\":\"Heisenberg\",\"id\":3}"
+    }
+  }
+}

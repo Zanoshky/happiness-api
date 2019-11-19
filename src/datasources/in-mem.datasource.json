@@ -2,5 +2,5 @@
   "name": "InMem",
   "connector": "memory",
   "localStorage": "",
-  "file": ""
+  "file": "./data/db.json"
 }
