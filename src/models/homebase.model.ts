@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, hasMany} from '@loopback/repository';
+import {Measurement} from './measurement.model';
 
 @model()
 export class Homebase extends Entity {
@@ -15,6 +16,8 @@ export class Homebase extends Entity {
   })
   name: string;
 
+  @hasMany(() => Measurement)
+  measurements: Measurement[];
 
   constructor(data?: Partial<Homebase>) {
     super(data);
