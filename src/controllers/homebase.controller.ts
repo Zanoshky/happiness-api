@@ -1,9 +1,6 @@
 import {
-  Count,
-  CountSchema,
   Filter,
   repository,
-  Where,
 } from '@loopback/repository';
 import {
   post,
@@ -11,10 +8,6 @@ import {
   get,
   getFilterSchemaFor,
   getModelSchemaRef,
-  getWhereSchemaFor,
-  patch,
-  put,
-  del,
   requestBody,
 } from '@loopback/rest';
 import {Homebase} from '../models';
@@ -50,20 +43,6 @@ export class HomebaseController {
     return this.homebaseRepository.create(homebase);
   }
 
-  @get('/homebases/count', {
-    responses: {
-      '200': {
-        description: 'Homebase model count',
-        content: {'application/json': {schema: CountSchema}},
-      },
-    },
-  })
-  async count(
-    @param.query.object('where', getWhereSchemaFor(Homebase)) where?: Where<Homebase>,
-  ): Promise<Count> {
-    return this.homebaseRepository.count(where);
-  }
-
   @get('/homebases', {
     responses: {
       '200': {
@@ -82,28 +61,6 @@ export class HomebaseController {
     return this.homebaseRepository.find(filter);
   }
 
-  @patch('/homebases', {
-    responses: {
-      '200': {
-        description: 'Homebase PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
-      },
-    },
-  })
-  async updateAll(
-    @requestBody({
-      content: {
-        'application/json': {
-          schema: getModelSchemaRef(Homebase, {partial: true}),
-        },
-      },
-    })
-    homebase: Homebase,
-    @param.query.object('where', getWhereSchemaFor(Homebase)) where?: Where<Homebase>,
-  ): Promise<Count> {
-    return this.homebaseRepository.updateAll(homebase, where);
-  }
-
   @get('/homebases/{id}', {
     responses: {
       '200': {
@@ -114,51 +71,5 @@ export class HomebaseController {
   })
   async findById(@param.path.number('id') id: number): Promise<Homebase> {
     return this.homebaseRepository.findById(id);
-  }
-
-  @patch('/homebases/{id}', {
-    responses: {
-      '204': {
-        description: 'Homebase PATCH success',
-      },
-    },
-  })
-  async updateById(
-    @param.path.number('id') id: number,
-    @requestBody({
-      content: {
-        'application/json': {
-          schema: getModelSchemaRef(Homebase, {partial: true}),
-        },
-      },
-    })
-    homebase: Homebase,
-  ): Promise<void> {
-    await this.homebaseRepository.updateById(id, homebase);
-  }
-
-  @put('/homebases/{id}', {
-    responses: {
-      '204': {
-        description: 'Homebase PUT success',
-      },
-    },
-  })
-  async replaceById(
-    @param.path.number('id') id: number,
-    @requestBody() homebase: Homebase,
-  ): Promise<void> {
-    await this.homebaseRepository.replaceById(id, homebase);
-  }
-
-  @del('/homebases/{id}', {
-    responses: {
-      '204': {
-        description: 'Homebase DELETE success',
-      },
-    },
-  })
-  async deleteById(@param.path.number('id') id: number): Promise<void> {
-    await this.homebaseRepository.deleteById(id);
   }
 }
