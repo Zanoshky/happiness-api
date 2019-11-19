@@ -1,3 +1,10 @@
 # happiness-api
 
-[![LoopBack](https://github.com/strongloop/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png)](http://loopback.io/)
+Backend for the Codename Happiness project.
+
+Project consist of following parts:
+- https://github.com/Zanoshky/happiness-iot
+- https://github.com/Zanoshky/happiness-api
+- https://github.com/Zanoshky/happiness-web
+
+## TODO
