@@ -4,12 +4,12 @@ import {InMemDataSource} from '../datasources';
 import {inject} from '@loopback/core';
 
 export class MeasurementRepository extends DefaultCrudRepository<
-  Measurement,
-  typeof Measurement.prototype.id,
-  MeasurementRelations
-> {
+    Measurement,
+    typeof Measurement.prototype.id,
+    MeasurementRelations
+    > {
   constructor(
-    @inject('datasources.InMem') dataSource: InMemDataSource,
+      @inject('datasources.InMem') dataSource: InMemDataSource,
   ) {
     super(Measurement, dataSource);
   }

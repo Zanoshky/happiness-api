@@ -6,6 +6,10 @@ export class Status extends Model {
     type: 'number',
     id: true,
     generated: true,
+    jsonSchema: {
+      maxLength: 36,
+      minLength: 36,
+    },
   })
   id?: string;
 

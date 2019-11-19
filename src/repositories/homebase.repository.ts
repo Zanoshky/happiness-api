@@ -4,12 +4,12 @@ import {InMemDataSource} from '../datasources';
 import {inject} from '@loopback/core';
 
 export class HomebaseRepository extends DefaultCrudRepository<
-  Homebase,
-  typeof Homebase.prototype.id,
-  HomebaseRelations
-> {
+    Homebase,
+    typeof Homebase.prototype.id,
+    HomebaseRelations
+    > {
   constructor(
-    @inject('datasources.InMem') dataSource: InMemDataSource,
+      @inject('datasources.InMem') dataSource: InMemDataSource,
   ) {
     super(Homebase, dataSource);
   }

@@ -10,6 +10,12 @@ export class Measurement extends Entity {
   id?: number;
 
   @property({
+    type: 'date',
+    default: '$now'
+  })
+  timestamp: number;
+
+  @property({
     type: 'number',
   })
   humidity?: number;

@@ -6,7 +6,6 @@ import {MeasurementRepository} from '../repositories';
 
 const uuid = require('uuid/v4');
 
-
 /**
  * TODO
  */
@@ -31,7 +30,9 @@ export class StatusController {
     status.homebaseId = id;
     status.timestamp = Date.now();
 
-    console.log(await this.measurementRepository.find());
+    const lastMeasurements = await this.measurementRepository.find();
+
+    console.log(lastMeasurements);
 
     status.dust = 1;
     status.gas = 2;
