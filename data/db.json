@@ -10,18 +10,18 @@
       "3": "{\"name\":\"Heisenberg\",\"id\":3}"
     },
     "Measurement": {
-      "1": "{\"timestamp\":\"2019-11-19T16:48:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":1,\"id\":10}",
-      "2": "{\"timestamp\":\"2019-11-19T16:48:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":1,\"id\":11}",
-      "3": "{\"timestamp\":\"2019-11-19T16:48:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":1,\"id\":12}",
-      "4": "{\"timestamp\":\"2019-11-19T16:48:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":13}",
-      "5": "{\"timestamp\":\"2019-11-19T16:48:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":14}",
-      "6": "{\"timestamp\":\"2019-11-19T16:49:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":15}",
-      "7": "{\"timestamp\":\"2019-11-19T16:49:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":16}",
-      "8": "{\"timestamp\":\"2019-11-19T16:49:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":17}",
-      "9": "{\"timestamp\":\"2019-11-19T16:49:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":3,\"id\":18}",
-      "10": "{\"timestamp\":\"2019-11-19T16:49:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":3,\"id\":19}",
-      "11": "{\"timestamp\":\"2019-11-19T16:49:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":3,\"id\":20}",
-      "12": "{\"timestamp\":\"2019-11-19T16:49:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":3,\"id\":21}"
+      "1": "{\"timestamp\":\"2019-11-19T16:47:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":1,\"id\":10}",
+      "2": "{\"timestamp\":\"2019-11-19T16:46:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":1,\"id\":11}",
+      "3": "{\"timestamp\":\"2019-11-19T16:45:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":1,\"id\":12}",
+      "4": "{\"timestamp\":\"2019-11-19T16:44:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":13}",
+      "5": "{\"timestamp\":\"2019-11-19T16:43:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":14}",
+      "6": "{\"timestamp\":\"2019-11-19T16:42:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":15}",
+      "7": "{\"timestamp\":\"2019-11-19T16:41:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":16}",
+      "8": "{\"timestamp\":\"2019-11-19T16:39:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":17}",
+      "9": "{\"timestamp\":\"2019-11-19T16:38:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":3,\"id\":18}",
+      "10": "{\"timestamp\":\"2019-11-19T16:37:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":3,\"id\":19}",
+      "11": "{\"timestamp\":\"2019-11-19T16:36:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":3,\"id\":20}",
+      "12": "{\"timestamp\":\"2019-11-19T16:34:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":3,\"id\":21}"
     }
   }
 }

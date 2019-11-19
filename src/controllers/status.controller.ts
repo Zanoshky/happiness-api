@@ -15,8 +15,8 @@ export class StatusController {
   ) {
   }
 
-  // Map to `GET /status/{id}` for a specific home base
-  @get('/status/{id}', {
+  // Map to `GET /status/{homebaseId}` for a specific home base
+  @get('/status/{homebaseId}', {
     responses: {
       '200': {
         description: 'Status model instance',
@@ -24,13 +24,17 @@ export class StatusController {
       },
     },
   })
-  async status(@param.path.number('id') id: number): Promise<Status> {
+  async status(@param.path.number('homebaseId') homebaseId: number): Promise<Status> {
     const status = new Status();
     status.id = uuid();
-    status.homebaseId = id;
+    status.homebaseId = homebaseId;
     status.timestamp = Date.now();
 
-    const lastMeasurements = await this.measurementRepository.find();
+    const lastMeasurements = await this.measurementRepository.find({
+      where: {homebaseId},
+      order: ['timestamp DESC'],
+      limit: 30
+    });
 
     console.log(lastMeasurements);
 
