@@ -69,42 +69,4 @@ export class HomebaseMeasurementController {
   ): Promise<Measurement> {
     return this.homebaseRepository.measurements(id).create(measurement);
   }
-
-  @patch('/homebases/{id}/measurements', {
-    responses: {
-      '200': {
-        description: 'Homebase.Measurement PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
-      },
-    },
-  })
-  async patch(
-    @param.path.number('id') id: number,
-    @requestBody({
-      content: {
-        'application/json': {
-          schema: getModelSchemaRef(Measurement, {partial: true}),
-        },
-      },
-    })
-    measurement: Partial<Measurement>,
-    @param.query.object('where', getWhereSchemaFor(Measurement)) where?: Where<Measurement>,
-  ): Promise<Count> {
-    return this.homebaseRepository.measurements(id).patch(measurement, where);
-  }
-
-  @del('/homebases/{id}/measurements', {
-    responses: {
-      '200': {
-        description: 'Homebase.Measurement DELETE success count',
-        content: {'application/json': {schema: CountSchema}},
-      },
-    },
-  })
-  async delete(
-    @param.path.number('id') id: number,
-    @param.query.object('where', getWhereSchemaFor(Measurement)) where?: Where<Measurement>,
-  ): Promise<Count> {
-    return this.homebaseRepository.measurements(id).delete(where);
-  }
 }
