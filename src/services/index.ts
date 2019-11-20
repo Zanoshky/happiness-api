@@ -1,1 +1,1 @@
-export * from './happiness-calculator.service';
+export * from './happinessCalculator.service';
