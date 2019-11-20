@@ -51,6 +51,10 @@ export class MeasurementController {
     @param.query.object('filter', getFilterSchemaFor(Measurement))
     filter?: Filter<Measurement>,
   ): Promise<Measurement[]> {
-    return this.measurementRepository.find(filter);
+    if (filter) {
+      return this.measurementRepository.find(filter);
+    }
+
+    return this.measurementRepository.find({limit: 30});
   }
 }
