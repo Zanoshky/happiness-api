@@ -1,7 +1,7 @@
 import {get, getModelSchemaRef, param, Request, RestBindings} from '@loopback/rest';
 import {repository} from '@loopback/repository';
 import {inject} from '@loopback/context';
-import {Status} from "../models";
+import {Status} from '../models';
 import {MeasurementRepository} from '../repositories';
 import {HAPPINESS_CALCULATOR_SERVICE, HappinessCalculatorService} from '../services/happinessCalculator.service';
 
@@ -11,22 +11,28 @@ const uuid = require('uuid/v4');
  * TODO
  */
 export class StatusController {
-  constructor(@inject(RestBindings.Http.REQUEST) private req: Request,
-              @repository(MeasurementRepository) private measurementRepository: MeasurementRepository,
-              @inject(HAPPINESS_CALCULATOR_SERVICE) private calculator: HappinessCalculatorService
-  ) {
-  }
+  constructor(
+    @inject(RestBindings.Http.REQUEST) private req: Request,
+    @repository(MeasurementRepository)
+    private measurementRepository: MeasurementRepository,
+    @inject(HAPPINESS_CALCULATOR_SERVICE)
+    private happinessCalculator: HappinessCalculatorService,
+  ) {}
 
   // Map to `GET /status/{homebaseId}` for a specific home base
   @get('/status/{homebaseId}', {
     responses: {
       '200': {
-        description: 'Status model instance',
-        content: {'application/json': {schema: getModelSchemaRef(Status)}},
+        description: 'Array of Statuses',
+        content: {
+          'application/json': {
+            schema: {type: 'array', items: getModelSchemaRef(Status)},
+          },
+        },
       },
     },
   })
-  async status(@param.path.number('homebaseId') homebaseId: number): Promise<Status> {
+  async status(@param.path.number('homebaseId') homebaseId: number): Promise<Status[]> {
     const status = new Status();
     status.id = uuid();
     status.homebaseId = homebaseId;
@@ -35,20 +41,10 @@ export class StatusController {
     const lastMeasurements = await this.measurementRepository.find({
       where: {homebaseId},
       order: ['timestamp DESC'],
-      limit: 30
+      limit: 30,
     });
 
-    console.log(lastMeasurements);
-
-    const happiness = this.calculator.calculate(lastMeasurements);
-    console.log(happiness);
-    status.dust = 1;
-    status.gas = 2;
-    status.humidity = 3;
-    status.light = 5;
-    status.volume = 6;
-    status.happiness = happiness;
-
-    return Promise.resolve(status);
+    const results = this.happinessCalculator.calculate(lastMeasurements);
+    return Promise.resolve(results);
   }
 }

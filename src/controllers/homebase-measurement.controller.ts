@@ -1,35 +1,19 @@
-import {
-  Count,
-  CountSchema,
-  Filter,
-  repository,
-  Where,
-} from '@loopback/repository';
-import {
-  del,
-  get,
-  getModelSchemaRef,
-  getWhereSchemaFor,
-  param,
-  patch,
-  post,
-  requestBody,
-} from '@loopback/rest';
-import {
-  Homebase,
-  Measurement,
-} from '../models';
+import {Filter, repository} from '@loopback/repository';
+import {get, getModelSchemaRef, param, post, requestBody} from '@loopback/rest';
+import {Homebase, Measurement} from '../models';
 import {HomebaseRepository} from '../repositories';
+import {secured, SecuredType} from '../auth';
 
 export class HomebaseMeasurementController {
   constructor(
-    @repository(HomebaseRepository) protected homebaseRepository: HomebaseRepository,
-  ) { }
+    @repository(HomebaseRepository)
+    protected homebaseRepository: HomebaseRepository,
+  ) {}
 
   @get('/homebases/{id}/measurements', {
     responses: {
       '200': {
-        description: 'Array of Measurement\'s belonging to Homebase',
+        description: "Array of Measurement's belonging to Homebase",
         content: {
           'application/json': {
             schema: {type: 'array', items: getModelSchemaRef(Measurement)},
@@ -45,6 +29,7 @@ export class HomebaseMeasurementController {
     return this.homebaseRepository.measurements(id).find(filter);
   }
 
+  @secured(SecuredType.HAS_ANY_ROLE, ['ADMIN', 'IOT_DEVICE'])
   @post('/homebases/{id}/measurements', {
     responses: {
       '200': {
@@ -61,11 +46,12 @@ export class HomebaseMeasurementController {
           schema: getModelSchemaRef(Measurement, {
             title: 'NewMeasurementInHomebase',
             exclude: ['id'],
-            optional: ['homebaseId']
+            optional: ['homebaseId'],
           }),
         },
       },
-    }) measurement: Omit<Measurement, 'id'>,
+    })
+    measurement: Omit<Measurement, 'id'>,
   ): Promise<Measurement> {
     return this.homebaseRepository.measurements(id).create(measurement);
   }

@@ -2,7 +2,7 @@ import {Client, expect} from '@loopback/testlab';
 import {ApiApplication} from '../..';
 import {setupApplication} from './test-helper';
 
-describe('PingController', () => {
+describe('UserController', () => {
   let app: ApiApplication;
   let client: Client;
 
@@ -14,8 +14,11 @@ describe('PingController', () => {
     await app.stop();
   });
 
-  it('invokes GET /ping', async () => {
-    const res = await client.get('/ping?msg=world').expect(200);
-    expect(res.body).to.containEql({greeting: 'Hello from LoopBack'});
+  it('invokes POST /users', async () => {
+    await client
+    .post('/users')
+    .type("application/json")
+    .send("{\"id\": \"test\", \"password\": \"test\", \"email\": \"zanoski.marko@gmail.com\"}")
+    .expect(200);
   });
 });

@@ -1,24 +1,16 @@
-import {
-  Filter,
-  repository,
-} from '@loopback/repository';
-import {
-  post,
-  param,
-  get,
-  getFilterSchemaFor,
-  getModelSchemaRef,
-  requestBody,
-} from '@loopback/rest';
+import {Filter, repository} from '@loopback/repository';
+import {get, getFilterSchemaFor, getModelSchemaRef, param, post, requestBody} from '@loopback/rest';
 import {Measurement} from '../models';
 import {MeasurementRepository} from '../repositories';
+import {secured, SecuredType} from '../auth';
 
 export class MeasurementController {
   constructor(
     @repository(MeasurementRepository)
-    public measurementRepository : MeasurementRepository,
+    public measurementRepository: MeasurementRepository,
   ) {}
 
+  @secured(SecuredType.HAS_ANY_ROLE, ['ADMIN', 'IOT_DEVICE'])
   @post('/measurements', {
     responses: {
       '200': {
@@ -56,7 +48,8 @@ export class MeasurementController {
     },
   })
   async find(
-    @param.query.object('filter', getFilterSchemaFor(Measurement)) filter?: Filter<Measurement>,
+    @param.query.object('filter', getFilterSchemaFor(Measurement))
+    filter?: Filter<Measurement>,
   ): Promise<Measurement[]> {
     return this.measurementRepository.find(filter);
   }

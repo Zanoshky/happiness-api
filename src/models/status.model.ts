@@ -59,7 +59,6 @@ export class Status extends Model {
   })
   light?: number;
 
-
   constructor(data?: Partial<Status>) {
     super(data);
   }

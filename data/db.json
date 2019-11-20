@@ -1,9 +1,21 @@
 {
   "ids": {
     "Homebase": 4,
-    "Measurement": 13
+    "Measurement": 13,
+    "User": 3,
+    "Role": 2,
+    "UserRole": 2
   },
   "models": {
+    "User": {
+      "team-heisenberg": "{\"id\": \"team-heisenberg\", \"password\": \"26E62DA051C403CD64FB5BC03355AA65C8FA9C646AF5D1750174B45DEEA0A1F652750AC0831DE83289971F13B84FA7F6A6004B7CC17E79A52AFFE132668B0016\", \"email\": \"zanoski.marko@gmail.com\"}"
+    },
+    "Role": {
+      "IOT_DEVICE": "{\"id\": \"IOT_DEVICE\", \"description\": \"IOT Device that can make POST requests to the Backend API.\"}"
+    },
+    "UserRole": {
+      "1": "{\"userId\": \"team-heisenberg\", \"roleId\": \"IOT_DEVICE\"}"
+    },
     "Homebase": {
       "1": "{\"name\":\"The BGs\",\"id\":1}",
       "2": "{\"name\":\"Los Bundidos\",\"id\":2}",

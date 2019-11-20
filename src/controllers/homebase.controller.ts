@@ -1,24 +1,16 @@
-import {
-  Filter,
-  repository,
-} from '@loopback/repository';
-import {
-  post,
-  param,
-  get,
-  getFilterSchemaFor,
-  getModelSchemaRef,
-  requestBody,
-} from '@loopback/rest';
+import {Filter, repository} from '@loopback/repository';
+import {get, getFilterSchemaFor, getModelSchemaRef, param, post, requestBody} from '@loopback/rest';
 import {Homebase} from '../models';
 import {HomebaseRepository} from '../repositories';
+import {secured, SecuredType} from '../auth';
 
 export class HomebaseController {
   constructor(
     @repository(HomebaseRepository)
-    public homebaseRepository : HomebaseRepository,
+    public homebaseRepository: HomebaseRepository,
   ) {}
 
+  @secured(SecuredType.HAS_ANY_ROLE, ['ADMIN', 'IOT_DEVICE'])
   @post('/homebases', {
     responses: {
       '200': {
@@ -56,7 +48,8 @@ export class HomebaseController {
     },
   })
   async find(
-    @param.query.object('filter', getFilterSchemaFor(Homebase)) filter?: Filter<Homebase>,
+    @param.query.object('filter', getFilterSchemaFor(Homebase))
+    filter?: Filter<Homebase>,
   ): Promise<Homebase[]> {
     return this.homebaseRepository.find(filter);
   }

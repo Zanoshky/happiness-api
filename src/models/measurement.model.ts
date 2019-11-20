@@ -1,4 +1,4 @@
-import {Entity, model, property, belongsTo} from '@loopback/repository';
+import {belongsTo, Entity, model, property} from '@loopback/repository';
 import {Homebase} from './homebase.model';
 
 @model()
@@ -12,7 +12,7 @@ export class Measurement extends Entity {
 
   @property({
     type: 'date',
-    default: '$now'
+    default: '$now',
   })
   timestamp: number;
 

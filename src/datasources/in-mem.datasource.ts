@@ -1,15 +1,9 @@
-import {
-  inject,
-  lifeCycleObserver,
-  LifeCycleObserver,
-  ValueOrPromise,
-} from '@loopback/core';
+import {inject, lifeCycleObserver, LifeCycleObserver, ValueOrPromise} from '@loopback/core';
 import {juggler} from '@loopback/repository';
 import * as config from './in-mem.datasource.json';
 
 @lifeCycleObserver('datasource')
-export class InMemDataSource extends juggler.DataSource
-  implements LifeCycleObserver {
+export class InMemDataSource extends juggler.DataSource implements LifeCycleObserver {
   static dataSourceName = 'InMem';
 
   constructor(
