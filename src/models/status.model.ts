@@ -3,13 +3,11 @@ import {Model, model, property} from '@loopback/repository';
 @model()
 export class Status extends Model {
   @property({
-    type: 'number',
+    type: 'string',
     id: true,
-    generated: true,
-    jsonSchema: {
-      maxLength: 36,
-      minLength: 36,
-    },
+    required: false,
+    length: 36,
+    defaultFn: 'uuidv4',
   })
   id?: string;
 

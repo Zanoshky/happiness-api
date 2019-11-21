@@ -1,20 +1,20 @@
 {
   "ids": {
     "Homebase": 4,
-    "Measurement": 13,
-    "User": 3,
+    "Measurement": 32,
+    "User": 2,
     "Role": 2,
     "UserRole": 2
   },
   "models": {
     "User": {
-      "team-heisenberg": "{\"id\": \"team-heisenberg\", \"password\": \"26E62DA051C403CD64FB5BC03355AA65C8FA9C646AF5D1750174B45DEEA0A1F652750AC0831DE83289971F13B84FA7F6A6004B7CC17E79A52AFFE132668B0016\", \"email\": \"zanoski.marko@gmail.com\"}"
+      "30f822b3-51c8-46cf-b791-77a546e8c3c0": "{\"id\": \"30f822b3-51c8-46cf-b791-77a546e8c3c0\", \"password\": \"26E62DA051C403CD64FB5BC03355AA65C8FA9C646AF5D1750174B45DEEA0A1F652750AC0831DE83289971F13B84FA7F6A6004B7CC17E79A52AFFE132668B0016\", \"email\": \"zanoski.marko@gmail.com\", \"username\": \"team-heisenberg\"}"
     },
     "Role": {
       "IOT_DEVICE": "{\"id\": \"IOT_DEVICE\", \"description\": \"IOT Device that can make POST requests to the Backend API.\"}"
     },
     "UserRole": {
-      "1": "{\"userId\": \"team-heisenberg\", \"roleId\": \"IOT_DEVICE\"}"
+      "1": "{\"userId\": \"30f822b3-51c8-46cf-b791-77a546e8c3c0\", \"roleId\": \"IOT_DEVICE\"}"
     },
     "Homebase": {
       "1": "{\"name\":\"The BGs\",\"id\":1}",
@@ -22,18 +22,37 @@
       "3": "{\"name\":\"Heisenberg\",\"id\":3}"
     },
     "Measurement": {
-      "1": "{\"timestamp\":\"2019-11-19T16:47:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":1,\"id\":10}",
-      "2": "{\"timestamp\":\"2019-11-19T16:46:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":1,\"id\":11}",
-      "3": "{\"timestamp\":\"2019-11-19T16:45:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":1,\"id\":12}",
-      "4": "{\"timestamp\":\"2019-11-19T16:44:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":13}",
-      "5": "{\"timestamp\":\"2019-11-19T16:43:17.324Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":14}",
-      "6": "{\"timestamp\":\"2019-11-19T16:42:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":15}",
-      "7": "{\"timestamp\":\"2019-11-19T16:41:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":16}",
-      "8": "{\"timestamp\":\"2019-11-19T16:39:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":2,\"id\":17}",
-      "9": "{\"timestamp\":\"2019-11-19T16:38:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":3,\"id\":18}",
-      "10": "{\"timestamp\":\"2019-11-19T16:37:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":3,\"id\":19}",
-      "11": "{\"timestamp\":\"2019-11-19T16:36:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":3,\"id\":20}",
-      "12": "{\"timestamp\":\"2019-11-19T16:34:18.214Z\",\"humidity\":0,\"temperature\":0,\"dust\":0,\"gas\":0,\"volume\":0,\"light\":0,\"homebaseId\":3,\"id\":21}"
+      "c02eab41-2b75-44e7-bb5c-a66f06d33cbd": "{\"id\":\"c02eab41-2b75-44e7-bb5c-a66f06d33cbd\",\"timestamp\":\"2019-11-21T10:42:21.647Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":1}",
+      "1092a934-7f3c-470b-80f1-8de5211df99e": "{\"id\":\"1092a934-7f3c-470b-80f1-8de5211df99e\",\"timestamp\":\"2019-11-21T10:42:22.580Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":1}",
+      "fcac687e-2cfc-4a96-9251-779daa00b1ba": "{\"id\":\"fcac687e-2cfc-4a96-9251-779daa00b1ba\",\"timestamp\":\"2019-11-21T10:42:23.098Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":1}",
+      "1a5dda0a-dbbb-4687-8459-2754821919a6": "{\"id\":\"1a5dda0a-dbbb-4687-8459-2754821919a6\",\"timestamp\":\"2019-11-21T10:42:41.706Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":1}",
+      "36f54bc4-80d3-4b94-bee6-48b7256fa342": "{\"id\":\"36f54bc4-80d3-4b94-bee6-48b7256fa342\",\"timestamp\":\"2019-11-21T10:42:42.019Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":2}",
+      "08f35428-0950-4306-9c21-e88534b23c00": "{\"id\":\"08f35428-0950-4306-9c21-e88534b23c00\",\"timestamp\":\"2019-11-21T10:42:44.011Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":2}",
+      "8d930989-f9dc-482d-8d2c-3975abd63a2c": "{\"id\":\"8d930989-f9dc-482d-8d2c-3975abd63a2c\",\"timestamp\":\"2019-11-21T10:42:44.261Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":2}",
+      "49191e72-f51e-4232-873b-26343e0b24c7": "{\"id\":\"49191e72-f51e-4232-873b-26343e0b24c7\",\"timestamp\":\"2019-11-21T10:42:44.817Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":2}",
+      "6b2584eb-6e5e-45d9-beb6-07ca37a2783a": "{\"id\":\"6b2584eb-6e5e-45d9-beb6-07ca37a2783a\",\"timestamp\":\"2019-11-21T10:42:46.185Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":2}",
+      "036ba103-f9b8-4750-8600-2bbb3ca91758": "{\"id\":\"036ba103-f9b8-4750-8600-2bbb3ca91758\",\"timestamp\":\"2019-11-21T10:42:46.682Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":2}",
+      "f3b3f1bf-b93b-4e69-bfa9-adef601d0509": "{\"id\":\"f3b3f1bf-b93b-4e69-bfa9-adef601d0509\",\"timestamp\":\"2019-11-21T10:42:47.197Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":2}",
+      "5a09e788-9c4d-4564-a372-370d18e272a1": "{\"id\":\"5a09e788-9c4d-4564-a372-370d18e272a1\",\"timestamp\":\"2019-11-21T10:42:47.702Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":2}",
+      "2c7a3cf7-436f-4077-818c-4c2b163c1b82": "{\"id\":\"2c7a3cf7-436f-4077-818c-4c2b163c1b82\",\"timestamp\":\"2019-11-21T10:42:49.986Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":2}",
+      "f36a0a47-ce69-4ed9-873a-f5587e4e6a70": "{\"id\":\"f36a0a47-ce69-4ed9-873a-f5587e4e6a70\",\"timestamp\":\"2019-11-21T10:42:50.493Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":3}",
+      "cb09b410-eb25-45f8-a053-d2fd73f8bf32": "{\"id\":\"cb09b410-eb25-45f8-a053-d2fd73f8bf32\",\"timestamp\":\"2019-11-21T10:42:50.956Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":3}",
+      "bda8d98a-e4de-4238-989a-f17fc9df10ae": "{\"id\":\"bda8d98a-e4de-4238-989a-f17fc9df10ae\",\"timestamp\":\"2019-11-21T10:42:51.455Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":3}",
+      "f3a50a24-f8dc-4af2-9222-ef2fc2c2a120": "{\"id\":\"f3a50a24-f8dc-4af2-9222-ef2fc2c2a120\",\"timestamp\":\"2019-11-21T10:42:51.955Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":3}",
+      "9e24d50f-2af6-4a74-9a04-81f3c4df11f8": "{\"id\":\"9e24d50f-2af6-4a74-9a04-81f3c4df11f8\",\"timestamp\":\"2019-11-21T10:42:52.419Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":3}",
+      "5d64ddd2-1401-4dc0-a0ec-fdbc54c0ab27": "{\"id\":\"5d64ddd2-1401-4dc0-a0ec-fdbc54c0ab27\",\"timestamp\":\"2019-11-21T10:42:52.859Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":3}",
+      "04a1b9bc-11e4-4b38-b288-3d68cb4f2ed3": "{\"id\":\"04a1b9bc-11e4-4b38-b288-3d68cb4f2ed3\",\"timestamp\":\"2019-11-21T10:42:53.298Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":3}",
+      "7e178d16-aea6-4fd1-b737-8e100893f42c": "{\"id\":\"7e178d16-aea6-4fd1-b737-8e100893f42c\",\"timestamp\":\"2019-11-21T10:42:53.726Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":3}",
+      "1adecb71-7c3e-4bee-8b98-554d2e176295": "{\"id\":\"1adecb71-7c3e-4bee-8b98-554d2e176295\",\"timestamp\":\"2019-11-21T10:42:54.152Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":3}",
+      "a9e183c5-8f2b-45a7-80bd-9a7d65167175": "{\"id\":\"a9e183c5-8f2b-45a7-80bd-9a7d65167175\",\"timestamp\":\"2019-11-21T12:06:53.039Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":1}",
+      "d2596411-7b8d-4e89-a1d5-03958cd95c3c": "{\"id\":\"d2596411-7b8d-4e89-a1d5-03958cd95c3c\",\"timestamp\":\"2019-11-21T12:06:55.690Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":2}",
+      "793f73b7-1ddc-49de-a4d3-8715fbfe6274": "{\"id\":\"793f73b7-1ddc-49de-a4d3-8715fbfe6274\",\"timestamp\":\"2019-11-21T12:06:56.558Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":3}",
+      "475a2348-d58d-455c-8a3d-537b1b7d28fc": "{\"id\":\"475a2348-d58d-455c-8a3d-537b1b7d28fc\",\"timestamp\":\"2019-11-21T12:06:57.626Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":1}",
+      "426a5354-c1f1-4341-bb32-bd4d5ec15aa6": "{\"id\":\"426a5354-c1f1-4341-bb32-bd4d5ec15aa6\",\"timestamp\":\"2019-11-21T12:08:43.116Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":2}",
+      "c90a6aec-d78f-4037-9a0e-760dbc5161a2": "{\"id\":\"c90a6aec-d78f-4037-9a0e-760dbc5161a2\",\"timestamp\":\"2019-11-21T12:08:43.541Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":3}",
+      "defec866-ed67-4131-a732-1925d0701688": "{\"id\":\"defec866-ed67-4131-a732-1925d0701688\",\"timestamp\":\"2019-11-21T12:08:44.121Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":1}",
+      "3ba7acc5-3d29-4398-90a3-028356df4bc9": "{\"id\":\"3ba7acc5-3d29-4398-90a3-028356df4bc9\",\"timestamp\":\"2019-11-21T12:08:44.720Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":2}",
+      "e8f9df85-31f3-4e90-bffb-f727e59a425f": "{\"id\":\"e8f9df85-31f3-4e90-bffb-f727e59a425f\",\"timestamp\":\"2019-11-21T12:08:45.238Z\",\"humidity\":30,\"temperature\":20,\"dust\":30,\"gas\":30,\"volume\":30,\"light\":0,\"homebaseId\":3}"
     }
   }
 }

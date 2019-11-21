@@ -1,9 +1,10 @@
-import {HttpErrors, post, requestBody} from '@loopback/rest';
-import {User} from '../models';
+import {HttpErrors, post, requestBody, getModelSchemaRef} from '@loopback/rest';
+import {User, Homebase, Measurement} from '../models';
 import {UserRepository, UserRoleRepository} from '../repositories';
 import {repository} from '@loopback/repository';
-import {Credentials, JWT_SECRET} from '../auth';
+import {Credentials, JWT_SECRET, secured, SecuredType} from '../auth';
 import {promisify} from 'util';
+import {create} from 'domain';
 
 const {sign} = require('jsonwebtoken');
 const signAsync = promisify(sign);
@@ -15,16 +16,50 @@ export class UserController {
     private userRoleRepository: UserRoleRepository,
   ) {}
 
-  @post('/users')
-  async createUser(@requestBody() user: User): Promise<User> {
+  @secured(SecuredType.PERMIT_ALL)
+  @post('/users', {
+    responses: {
+      '200': {
+        description: 'User model instance',
+        content: {'application/json': {schema: getModelSchemaRef(User)}},
+      },
+    },
+  })
+  async createUser(
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: getModelSchemaRef(User, {
+            title: 'NewUser',
+            exclude: ['id'],
+          }),
+        },
+      },
+    })
+    user: User,
+  ): Promise<User> {
     return this.userRepository.create(user);
   }
 
-  @post('/users/login')
-  async login(@requestBody() credentials: Credentials) {
+  @secured(SecuredType.PERMIT_ALL)
+  @post('/users/login', {
+    responses: {
+      '200': {
+        description: 'AuthToken instance',
+      },
+    },
+  })
+  async login(
+    @requestBody({
+      content: {
+        'application/json': {},
+      },
+    })
+    credentials: Credentials,
+  ) {
     if (!credentials.username || !credentials.password) throw new HttpErrors.BadRequest('Missing Username or Password');
     const user = await this.userRepository.findOne({
-      where: {id: credentials.username},
+      where: {username: credentials.username},
     });
     if (!user) throw new HttpErrors.Unauthorized('Invalid credentials');
 

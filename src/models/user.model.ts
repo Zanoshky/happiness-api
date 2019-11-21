@@ -5,10 +5,17 @@ export class User extends Entity {
   @property({
     type: 'string',
     id: true,
-    generated: false,
-    required: true,
+    required: false,
+    length: 36,
+    defaultFn: 'uuidv4',
   })
   id: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  username: string;
 
   @property({
     type: 'string',

@@ -101,6 +101,13 @@ export interface Credentials {
   password: string;
 }
 
+export interface AuthToken {
+  token: string;
+  id: string;
+  email: string;
+  roles: Array<String>;
+}
+
 export namespace MyAuthBindings {
   export const STRATEGY = BindingKey.create<AuthenticationStrategy | undefined>('authentication.strategy');
 }
@@ -140,19 +147,19 @@ export class MyAuthAuthenticationStrategyProvider implements Provider<Authentica
   ) {
     try {
       const {username} = payload;
-      const user = await this.userRepository.findById(username);
+      const user = await this.userRepository.findOne({where: {username: username}});
       if (!user) done(null, false);
 
-      await this.verifyRoles(username);
+      await this.verifyRoles(user!.id);
 
-      done(null, {name: username, email: user.email, [securityId]: username});
+      done(null, {name: username, email: user!.email, [securityId]: username});
     } catch (err) {
       if (err.name === 'UnauthorizedError') done(null, false);
       done(err, false);
     }
   }
 
-  async verifyRoles(username: string) {
+  async verifyRoles(userId: string) {
     const {type, roles} = this.metadata;
 
     if ([SecuredType.IS_AUTHENTICATED, SecuredType.PERMIT_ALL].includes(type)) return;
@@ -160,14 +167,14 @@ export class MyAuthAuthenticationStrategyProvider implements Provider<Authentica
     if (type === SecuredType.HAS_ANY_ROLE) {
       if (!roles.length) return;
       const {count} = await this.userRoleRepository.count({
-        userId: username,
+        userId: userId,
         roleId: {inq: roles},
       });
 
       if (count) return;
     } else if (type === SecuredType.HAS_ROLES && roles.length) {
       const userRoles = await this.userRoleRepository.find({
-        where: {userId: username},
+        where: {userId: userId},
       });
       const roleIds = userRoles.map(ur => ur.roleId);
       let valid = true;

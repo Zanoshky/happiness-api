@@ -4,11 +4,13 @@ import {Homebase} from './homebase.model';
 @model()
 export class Measurement extends Entity {
   @property({
-    type: 'number',
+    type: 'string',
     id: true,
-    generated: true,
+    required: false,
+    length: 36,
+    defaultFn: 'uuidv4',
   })
-  id?: number;
+  id?: string;
 
   @property({
     type: 'date',
