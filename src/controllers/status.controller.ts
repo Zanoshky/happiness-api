@@ -40,7 +40,7 @@ export class StatusController {
 
     const lastMeasurements = await this.measurementRepository.find({
       where: {homebaseId},
-      order: ['timestamp DESC'],
+      order: ['timestamp ASC'],
       limit: 30,
     });
 
