@@ -1,4 +1,6 @@
-# Check out https://hub.docker.com/_/node to select a new base image
+# ######################
+# PRODUCTION ENVIRONMENT
+# ######################
 FROM node:10-slim
 
 # Set to a non-root built-in user `node`
@@ -11,7 +13,6 @@ WORKDIR /home/node/app
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
 COPY --chown=node package*.json ./
 
 RUN npm install
