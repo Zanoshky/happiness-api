@@ -4,8 +4,18 @@
   "description": "happiness-api",
   "keywords": [
     "loopback-application",
-    "loopback"
+    "loopback",
+    "codename-happiness",
+    "happiness",
+    "iot-project",
+    "health",
+    "measurement"
   ],
+  "repository": {
+    "type": "git"
+  },
+  "author": "Marko Zanoski <zanoski.marko@gmail.com>",
+  "license": "GPL-3.0-or-later",
   "main": "index.js",
   "engines": {
     "node": ">=8.9"
@@ -26,18 +36,13 @@
     "posttest": "npm run lint",
     "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest",
     "docker:build": "docker build -t happiness-api .",
-    "docker:run": "docker run -p 80:3000 -d happiness-api",
+    "docker:run": "docker run -p 9000:9443 -d happiness-api",
     "docker:remove": "docker stop happiness-api && docker rm happiness-api",
     "migrate": "node ./dist/migrate",
     "prestart": "npm run build",
     "start": "node -r source-map-support/register .",
     "prepublishOnly": "npm run test"
   },
-  "repository": {
-    "type": "git"
-  },
-  "author": "Marko Zanoski <zanoski.marko@gmail.com>",
-  "license": "GPL-3.0-or-later",
   "files": [
     "README.md",
     "index.js",
