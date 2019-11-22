@@ -39,7 +39,7 @@
     "posttest": "npm run lint",
     "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest",
     "docker:build": "docker build -t happiness-api .",
-    "docker:run": "docker run -p 9000:9443 -d happiness-api --name happiness_api",
+    "docker:run": "docker run --name happiness_api -p 9000:9443 -d happiness-api",
     "docker:remove": "docker stop happiness-api && docker rm happiness-api",
     "docker:logs": "docker logs happiness_api",
     "docker:viewdb": "docker exec happiness_api bash -c 'cat ./data/db.json'",
