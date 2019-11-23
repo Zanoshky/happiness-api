@@ -1,10 +1,11 @@
-import {Measurement, Status} from '../models';
+import {Measurement} from '../models';
 import {BindingKey} from '@loopback/context';
+import {GraphChart} from '../providers';
 
 export interface HappinessParameter extends Array<Measurement> {}
 
 export interface HappinessCalculatorService {
-  calculate(args: HappinessParameter): Array<Status>;
+  calculate(args: HappinessParameter): Array<GraphChart>;
 }
 
 export const HAPPINESS_CALCULATOR_SERVICE = BindingKey.create<HappinessCalculatorService>(

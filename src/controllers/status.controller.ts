@@ -4,6 +4,7 @@ import {inject} from '@loopback/context';
 import {Status} from '../models';
 import {MeasurementRepository} from '../repositories';
 import {HAPPINESS_CALCULATOR_SERVICE, HappinessCalculatorService} from '../services/happinessCalculator.service';
+import {GraphChart} from '../providers';
 
 const uuid = require('uuid/v4');
 
@@ -32,12 +33,7 @@ export class StatusController {
       },
     },
   })
-  async status(@param.path.number('homebaseId') homebaseId: number): Promise<Status[]> {
-    const status = new Status();
-    status.id = uuid();
-    status.homebaseId = homebaseId;
-    status.timestamp = Date.now();
-
+  async status(@param.path.number('homebaseId') homebaseId: number): Promise<GraphChart[]> {
     const lastMeasurements = await this.measurementRepository.find({
       where: {homebaseId},
       order: ['timestamp ASC'],

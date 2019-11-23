@@ -1,29 +1,83 @@
 import {Provider} from '@loopback/context';
 import {HappinessCalculatorService, HappinessParameter} from '../services';
-import {Status} from '../models';
+import {Measurement} from '../models';
+
+export type GraphChart = {
+  id: string;
+  data: GraphValue[];
+};
+
+type GraphValue = {
+  x: string;
+  y: number;
+};
 
 export class HappinessCalculator implements HappinessCalculatorService {
-  calculate(parameter: HappinessParameter): Array<Status> {
-    const results: Status[] = [];
+  calculate(parameter: HappinessParameter): Array<GraphChart> {
+    const results: GraphChart[] = [];
 
-    parameter.forEach(param => {
-      const status = new Status();
-      status.homebaseId = param.homebaseId;
-      status.timestamp = param.timestamp;
-      status.volume = param.volume;
-      status.light = param.light;
-      status.humidity = param.humidity;
-      status.gas = param.gas;
-      status.dust = param.dust;
-      status.temperature = param.temperature;
+    const lightChart: GraphChart = {id: 'Light', data: []};
+    const volumeChart: GraphChart = {id: 'Volume', data: []};
+    const temperatureChart: GraphChart = {id: 'Temprature', data: []};
+    const humidityChart: GraphChart = {id: 'Humidity', data: []};
+    const dustChart: GraphChart = {id: 'Dust', data: []};
+    const gasChart: GraphChart = {id: 'Gas', data: []};
+    const happinessChart: GraphChart = {id: 'Happiness', data: []};
 
-      // TODO Magic here
-      status.happiness = 5;
+    parameter.forEach(measurement => {
+      const time = new Date(new Date(measurement.timestamp).getTime()).toTimeString().split(' ')[0];
 
-      results.push(status);
+      const lightEntry = {
+        x: time,
+        y: measurement.light!,
+      };
+      lightChart.data.push(lightEntry);
+
+      const volumeEntry = {
+        x: time,
+        y: measurement.volume!,
+      };
+      volumeChart.data.push(volumeEntry);
+
+      const temperatureEntry = {
+        x: time,
+        y: measurement.temperature!,
+      };
+      temperatureChart.data.push(temperatureEntry);
+
+      const humidityEntry = {
+        x: time,
+        y: measurement.humidity!,
+      };
+      humidityChart.data.push(humidityEntry);
+
+      const dustEntry = {
+        x: time,
+        y: measurement.dust!,
+      };
+      dustChart.data.push(dustEntry);
+
+      const gasEntry = {
+        x: time,
+        y: measurement.gas!,
+      };
+      gasChart.data.push(gasEntry);
+
+      const happyStatus = {
+        x: time,
+        y: this.calculateHappiness(measurement),
+      };
+
+      happinessChart.data.push(happyStatus);
     });
 
+    results.push(lightChart, volumeChart, temperatureChart, dustChart, gasChart, humidityChart, happinessChart);
+
     return results;
+  }
+
+  calculateHappiness(parameter: Measurement): number {
+    return Math.floor(Math.random() * 100);
   }
 }
 
