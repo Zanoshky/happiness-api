@@ -36,11 +36,11 @@ export class StatusController {
   async status(@param.path.number('homebaseId') homebaseId: number): Promise<GraphChart[]> {
     const lastMeasurements = await this.measurementRepository.find({
       where: {homebaseId},
-      order: ['timestamp ASC'],
+      order: ['timestamp DESC'],
       limit: 30,
     });
 
-    const results = this.happinessCalculator.calculate(lastMeasurements);
+    const results = this.happinessCalculator.calculate(lastMeasurements.reverse());
     return Promise.resolve(results);
   }
 }
