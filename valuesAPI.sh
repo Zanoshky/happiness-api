@@ -1,12 +1,12 @@
 for i in {1..1000}
 do
 
-randomTemp=$(( 10+ $RANDOM % 40 ))
-randomHumidity=$(( $RANDOM % 100 ))
-randomDust=$(( $RANDOM % 100 ))
-randomGas=$(( $RANDOM % 1000 ))
-randomVolume=$(( 30 + $RANDOM % 100))
-randomLight=$(( $RANDOM % 1000 ))
+randomTemp=$(( 20 + $RANDOM % 2 ))
+randomHumidity=$(( 30 + $RANDOM % 2 ))
+randomDust=$(( 800 + $RANDOM % 20 ))
+randomGas=$(( 800 + $RANDOM % 20 ))
+randomVolume=$(( 30 + $RANDOM % 40 ))
+randomLight=$(( 500 + $RANDOM % 4 ))
 echo $randomTemp
 echo $randomHumidity
 
