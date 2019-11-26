@@ -6,8 +6,6 @@ import {MeasurementRepository} from '../repositories';
 import {HAPPINESS_CALCULATOR_SERVICE, HappinessCalculatorService} from '../services/happinessCalculator.service';
 import {GraphChart} from '../providers';
 
-const uuid = require('uuid/v4');
-
 /**
  * TODO
  */
