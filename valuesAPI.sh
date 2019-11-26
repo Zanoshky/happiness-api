@@ -1,23 +1,25 @@
-randomTemp=$(( $RANDOM % 40 ))
-randomHumidity=$(( $RANDOM % 150 ))
-randomDust=$(( $RANDOM % 60 ))
-randomGas=$(( $RANDOM % 40 ))
-randomVolume=$(( $RANDOM % 100 ))
-randomLight=$(( $RANDOM % 70 ))
+for i in {1..1000}
+do
+
+randomTemp=$(( 10+ $RANDOM % 40 ))
+randomHumidity=$(( $RANDOM % 100 ))
+randomDust=$(( $RANDOM % 100 ))
+randomGas=$(( $RANDOM % 1000 ))
+randomVolume=$(( 30 + $RANDOM % 100))
+randomLight=$(( $RANDOM % 1000 ))
 echo $randomTemp
 echo $randomHumidity
 
 
+
 curl -X POST \
-  'https://my-office-happiness.com:9443/measurements?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlYW0taGVpc2VuYmVyZyIsImlhdCI6MTU3NDQ0ODMyN30._nQFNyk8BNv65-CFj7pSmqro8TC_uHAiijiyMxuTanA' \
+  'https://my-office-happiness.com:9443/measurements?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlYW0taGVpc2VuYmVyZyIsImlhdCI6MTU3NDc2MTQ4NX0.Ten1x1eFcrNol8gkp0adLvnHTD1mrm3i39IH9WZ2Rpw' \
   -H 'Accept: */*' \
   -H 'Accept-Encoding: gzip, deflate' \
   -H 'Cache-Control: no-cache' \
   -H 'Connection: keep-alive' \
-  -H 'Content-Length: 132' \
   -H 'Content-Type: application/json' \
   -H 'Host: my-office-happiness.com:9443' \
-  -H 'Postman-Token: 6edc3049-87ce-47a3-9793-93fc6ed8f4fb,5c015050-7e43-4d9b-bb3c-53f7d150b715' \
   -H 'User-Agent: PostmanRuntime/7.20.1' \
   -H 'cache-control: no-cache' \
   -d '{
@@ -29,3 +31,6 @@ curl -X POST \
     "light": '$randomLight',
     "homebaseId": 1
 }'
+
+sleep 1
+done
