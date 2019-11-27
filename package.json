@@ -44,6 +44,7 @@
     "docker:logs": "docker logs happiness_api",
     "docker:viewdb": "docker exec happiness_api bash -c 'cat ./data/db.json'",
     "docker:downloaddb": "docker cp happiness_api:/home/node/app/data/db.json ./backup/db.json",
+    "docker:dbsize": "docker exec happiness_api bash -c 'ls -lh ./data/db.json | cut -d \" \" -f5'",
     "migrate": "node ./dist/migrate",
     "prestart": "npm run build",
     "start": "node -r source-map-support/register .",
