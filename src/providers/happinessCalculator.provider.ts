@@ -13,6 +13,18 @@ type GraphValue = {
 };
 
 export class HappinessCalculator implements HappinessCalculatorService {
+  calculateCurrent(parameter: HappinessParameter): Array<number> {
+    return [
+      parameter[0].light!,
+      parameter[0].volume!,
+      parameter[0].temperature!,
+      parameter[0].humidity!,
+      parameter[0].dust!,
+      parameter[0].gas!,
+      this.calculateHappiness(parameter[0]),
+    ];
+  }
+
   calculate(parameter: HappinessParameter): Array<GraphChart> {
     const results: GraphChart[] = [];
 

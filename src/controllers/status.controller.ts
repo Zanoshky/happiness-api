@@ -41,4 +41,28 @@ export class StatusController {
     const results = this.happinessCalculator.calculate(lastMeasurements.reverse());
     return Promise.resolve(results);
   }
+
+  // Map to `GET /status/{homebaseId}` for a specific home base
+  @get('/current/{homebaseId}', {
+    responses: {
+      '200': {
+        description: 'Array of Statuses',
+        content: {
+          'application/json': {
+            schema: {type: 'array', items: getModelSchemaRef(Status)},
+          },
+        },
+      },
+    },
+  })
+  async current(@param.path.number('homebaseId') homebaseId: number): Promise<number[]> {
+    const lastMeasurement = await this.measurementRepository.find({
+      where: {homebaseId},
+      order: ['timestamp DESC'],
+      limit: 1,
+    });
+
+    const results = this.happinessCalculator.calculateCurrent(lastMeasurement);
+    return Promise.resolve(results);
+  }
 }
