@@ -35,7 +35,7 @@ export class StatusController {
     const lastMeasurements = await this.measurementRepository.find({
       where: {homebaseId},
       order: ['timestamp DESC'],
-      limit: 30,
+      limit: 10,
     });
 
     const results = this.happinessCalculator.calculate(lastMeasurements.reverse());
