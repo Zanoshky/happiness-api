@@ -1,0 +1,10 @@
+{
+  "name": "mysql",
+  "connector": "mysql",
+  "url": "",
+  "host": "happiness_db",
+  "port": 3306,
+  "user": "root",
+  "password": "password",
+  "database": "happiness"
+}

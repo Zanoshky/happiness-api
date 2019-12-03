@@ -1,6 +1,6 @@
-import {Provider} from '@loopback/context';
-import {HappinessCalculatorService, HappinessParameter} from '../services';
-import {Status} from '../models';
+import { Provider } from '@loopback/context';
+import { HappinessCalculatorService, HappinessParameter } from '../services';
+import { Status } from '../models';
 
 export class HappinessCalculator implements HappinessCalculatorService {
   calculate(parameter: HappinessParameter): Array<Status> {
@@ -20,6 +20,7 @@ export class HappinessCalculator implements HappinessCalculatorService {
       // TODO Magic here
       status.happiness = 5;
 
+
       results.push(status);
     });
 
@@ -27,8 +28,10 @@ export class HappinessCalculator implements HappinessCalculatorService {
   }
 }
 
+
+
 export class HappinessCalculatorServiceProvider implements Provider<HappinessCalculatorService> {
-  constructor(public calculator: HappinessCalculatorService = new HappinessCalculator()) {}
+  constructor(public calculator: HappinessCalculatorService = new HappinessCalculator()) { }
 
   value(): HappinessCalculatorService {
     return this.calculator;

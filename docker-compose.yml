@@ -1,0 +1,47 @@
+version: '3.3'
+services:
+  api:
+    container_name: happiness_api
+    build: .
+    ports:
+      - 3000:3000
+    restart: always
+    volumes:
+      - api:/usr/src/api/
+    depends_on:
+      - db
+    networks:
+      - net
+  db:
+    container_name: happiness_db
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'happiness'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'user'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: 'password'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '3306:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+      # Where our data will be persisted
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - net
+    restart: unless-stopped
+# Names our volume
+volumes:
+  db:
+  api:
+
+# Networks to be created to facilitate communication between containers
+networks:
+  net:
+    driver: bridge

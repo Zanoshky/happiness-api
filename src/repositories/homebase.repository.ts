@@ -1,6 +1,6 @@
 import {DefaultCrudRepository, HasManyRepositoryFactory, repository} from '@loopback/repository';
 import {Homebase, HomebaseRelations, Measurement} from '../models';
-import {InMemDataSource} from '../datasources';
+import {MysqlDataSource} from '../datasources';
 import {Getter, inject} from '@loopback/core';
 import {MeasurementRepository} from './measurement.repository';
 
@@ -12,7 +12,7 @@ export class HomebaseRepository extends DefaultCrudRepository<
   public readonly measurements: HasManyRepositoryFactory<Measurement, typeof Homebase.prototype.id>;
 
   constructor(
-    @inject('datasources.InMem') dataSource: InMemDataSource,
+    @inject('datasources.mysql') dataSource: MysqlDataSource,
     @repository.getter('MeasurementRepository')
     protected measurementRepositoryGetter: Getter<MeasurementRepository>,
   ) {
