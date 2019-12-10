@@ -8,7 +8,6 @@ export type GraphChart = {
 };
 
 type GraphValue = {
-  x: string;
   y: number;
 };
 
@@ -37,46 +36,37 @@ export class HappinessCalculator implements HappinessCalculatorService {
     const happinessChart: GraphChart = {id: 'Happiness', data: []};
 
     parameter.forEach(measurement => {
-      const time = new Date(new Date(measurement.timestamp).getTime()).toTimeString().split(' ')[0];
-
       const lightEntry = {
-        x: time,
         y: measurement.light!,
       };
       lightChart.data.push(lightEntry);
 
       const volumeEntry = {
-        x: time,
         y: measurement.volume!,
       };
       volumeChart.data.push(volumeEntry);
 
       const temperatureEntry = {
-        x: time,
         y: measurement.temperature!,
       };
       temperatureChart.data.push(temperatureEntry);
 
       const humidityEntry = {
-        x: time,
         y: measurement.humidity!,
       };
       humidityChart.data.push(humidityEntry);
 
       const dustEntry = {
-        x: time,
         y: measurement.dust!,
       };
       dustChart.data.push(dustEntry);
 
       const gasEntry = {
-        x: time,
         y: measurement.gas!,
       };
       gasChart.data.push(gasEntry);
 
       const happyStatus = {
-        x: time,
         y: this.calculateHappiness(measurement),
       };
 
