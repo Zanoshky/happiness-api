@@ -38,6 +38,11 @@
     "test": "lb-mocha --allow-console-logs \"dist/__tests__\"",
     "posttest": "npm run lint",
     "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest",
+    "prestart": "npm run build",
+    "start": "node -r source-map-support/register .",
+    "dev": "PORT=3030 NODE_ENV=development node -r source-map-support/register .",
+    "fake:prod": "sh ./scripts/post-fake-data.sh https://my-office-happiness.com:9443 1000",
+    "fake:local": "sh ./scripts/post-fake-data.sh http://localhost:3030 1000",
     "docker:build": "docker build -t happiness-api .",
     "docker:run": "docker run --name happiness_api -p 9000:9443 -d happiness-api",
     "docker:remove": "docker stop happiness_api && docker rm happiness_api",
@@ -45,10 +50,7 @@
     "docker:viewdb": "docker exec happiness_api bash -c 'cat ./data/db.json'",
     "docker:downloaddb": "docker cp happiness_api:/home/node/app/data/db.json ./backup/db.json",
     "docker:dbsize": "docker exec happiness_api bash -c 'ls -lh ./data/db.json | cut -d \" \" -f5'",
-    "migrate": "node ./dist/migrate",
-    "prestart": "npm run build",
-    "start": "node -r source-map-support/register .",
-    "prepublishOnly": "npm run test"
+    "migrate": "node ./dist/migrate"
   },
   "files": [
     "README.md",
