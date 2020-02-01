@@ -1,10 +1,9 @@
 import {HttpErrors, post, requestBody, getModelSchemaRef} from '@loopback/rest';
-import {User, Homebase, Measurement} from '../models';
+import {User} from '../models';
 import {UserRepository, UserRoleRepository} from '../repositories';
 import {repository} from '@loopback/repository';
 import {Credentials, JWT_SECRET, secured, SecuredType} from '../auth';
 import {promisify} from 'util';
-import {create} from 'domain';
 
 const {sign} = require('jsonwebtoken');
 const signAsync = promisify(sign);

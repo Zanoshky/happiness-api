@@ -28,4 +28,11 @@ describe('HomePage', () => {
       .expect('Content-Type', /text\/html/)
       .expect(/<title>LoopBack API Explorer/);
   });
+
+  it('contins correct build version', async () => {
+    await client
+      .get('/')
+      .expect(200)
+      .expect(/Version 1.0.3</);
+  });
 });

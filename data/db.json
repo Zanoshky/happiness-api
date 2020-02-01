@@ -1,14 +1,21 @@
 {
   "ids": {
     "Homebase": 4,
-    "Measurement": 85,
-    "User": 2,
+    "Measurement": 89,
+    "User": 9,
     "Role": 2,
     "UserRole": 2
   },
   "models": {
     "User": {
-      "30f822b3-51c8-46cf-b791-77a546e8c3c0": "{\"id\": \"30f822b3-51c8-46cf-b791-77a546e8c3c0\", \"password\": \"26E62DA051C403CD64FB5BC03355AA65C8FA9C646AF5D1750174B45DEEA0A1F652750AC0831DE83289971F13B84FA7F6A6004B7CC17E79A52AFFE132668B0016\", \"email\": \"zanoski.marko@gmail.com\", \"username\": \"team-heisenberg\"}"
+      "30f822b3-51c8-46cf-b791-77a546e8c3c0": "{\"id\": \"30f822b3-51c8-46cf-b791-77a546e8c3c0\", \"password\": \"26E62DA051C403CD64FB5BC03355AA65C8FA9C646AF5D1750174B45DEEA0A1F652750AC0831DE83289971F13B84FA7F6A6004B7CC17E79A52AFFE132668B0016\", \"email\": \"zanoski.marko@gmail.com\", \"username\": \"team-heisenberg\"}",
+      "bd8da2ad-0c8d-40ba-8bd8-d9c7d84338ab": "{\"id\":\"bd8da2ad-0c8d-40ba-8bd8-d9c7d84338ab\",\"username\":\"Zanoshky\",\"email\":\"zanoski.marko@gmail.com\",\"password\":\"test\"}",
+      "16a5eb2f-e21a-40e9-9474-35c765889195": "{\"id\":\"16a5eb2f-e21a-40e9-9474-35c765889195\",\"username\":\"Zanoshky\",\"email\":\"zanoski.marko@gmail.com\",\"password\":\"test\"}",
+      "370f9756-f681-4086-bf6f-cbfa8752f51a": "{\"id\":\"370f9756-f681-4086-bf6f-cbfa8752f51a\",\"username\":\"Zanoshky\",\"email\":\"zanoski.marko@gmail.com\",\"password\":\"test\"}",
+      "3e24b047-b826-4c6d-b4c8-81f7fc65ee5e": "{\"id\":\"3e24b047-b826-4c6d-b4c8-81f7fc65ee5e\",\"username\":\"Zanoshky\",\"email\":\"zanoski.marko@gmail.com\",\"password\":\"test\"}",
+      "10768857-fb5b-4f24-9689-c3c0f1938992": "{\"id\":\"10768857-fb5b-4f24-9689-c3c0f1938992\",\"username\":\"Zanoshky\",\"email\":\"zanoski.marko@gmail.com\",\"password\":\"test\"}",
+      "579706a1-01d0-46e6-8b52-889764ca869d": "{\"id\":\"579706a1-01d0-46e6-8b52-889764ca869d\",\"username\":\"Zanoshky\",\"email\":\"zanoski.marko@gmail.com\",\"password\":\"test\"}",
+      "af5e72e0-a8e8-4def-a8b1-6000b104afd8": "{\"id\":\"af5e72e0-a8e8-4def-a8b1-6000b104afd8\",\"username\":\"Zanoshky\",\"email\":\"zanoski.marko@gmail.com\",\"password\":\"test\"}"
     },
     "Role": {
       "IOT_DEVICE": "{\"id\": \"IOT_DEVICE\", \"description\": \"IOT Device that can make POST requests to the Backend API.\"}"
@@ -74,7 +81,11 @@
       "37497ae1-704b-46eb-90d9-3d7b84bffd90": "{\"id\":\"37497ae1-704b-46eb-90d9-3d7b84bffd90\",\"timestamp\":\"2019-12-10T18:15:10.910Z\",\"humidity\":32,\"temperature\":20,\"dust\":877,\"gas\":408,\"volume\":57,\"light\":508,\"homebaseId\":1}",
       "3f077ba0-0312-4acf-91f6-011fc298b630": "{\"id\":\"3f077ba0-0312-4acf-91f6-011fc298b630\",\"timestamp\":\"2019-12-10T18:15:11.926Z\",\"humidity\":32,\"temperature\":25,\"dust\":828,\"gas\":564,\"volume\":61,\"light\":514,\"homebaseId\":1}",
       "5171302c-04ab-48d9-864d-938c728f898d": "{\"id\":\"5171302c-04ab-48d9-864d-938c728f898d\",\"timestamp\":\"2019-12-10T18:15:12.947Z\",\"humidity\":37,\"temperature\":29,\"dust\":814,\"gas\":534,\"volume\":69,\"light\":524,\"homebaseId\":1}",
-      "432c310d-9b80-4321-8fa6-65d17ad2f44e": "{\"id\":\"432c310d-9b80-4321-8fa6-65d17ad2f44e\",\"timestamp\":\"2020-02-01T19:08:01.275Z\",\"humidity\":2,\"temperature\":3,\"dust\":4,\"gas\":5,\"volume\":7,\"light\":8,\"pressure\":6,\"homebaseId\":1}"
+      "432c310d-9b80-4321-8fa6-65d17ad2f44e": "{\"id\":\"432c310d-9b80-4321-8fa6-65d17ad2f44e\",\"timestamp\":\"2020-02-01T19:08:01.275Z\",\"humidity\":2,\"temperature\":3,\"dust\":4,\"gas\":5,\"volume\":7,\"light\":8,\"pressure\":6,\"homebaseId\":1}",
+      "b328ebaf-168d-44df-8608-467f37bc2ae9": "{\"id\":\"b328ebaf-168d-44df-8608-467f37bc2ae9\",\"timestamp\":\"2020-02-01T19:42:02.375Z\",\"humidity\":2,\"temperature\":3,\"dust\":4,\"gas\":5,\"volume\":7,\"light\":8,\"pressure\":6,\"homebaseId\":1}",
+      "bd134e69-430a-4a75-9135-b42b25b2a2b9": "{\"id\":\"bd134e69-430a-4a75-9135-b42b25b2a2b9\",\"timestamp\":\"2020-02-01T19:42:40.010Z\",\"humidity\":2,\"temperature\":3,\"dust\":4,\"gas\":5,\"volume\":7,\"light\":8,\"pressure\":6,\"homebaseId\":1}",
+      "62db0e62-02c0-42d9-89af-7930df5739c3": "{\"id\":\"62db0e62-02c0-42d9-89af-7930df5739c3\",\"timestamp\":\"2020-02-01T19:43:44.326Z\",\"humidity\":2,\"temperature\":3,\"dust\":4,\"gas\":5,\"volume\":7,\"light\":8,\"pressure\":6,\"homebaseId\":1}",
+      "ac05ba9c-e4e5-471b-ac36-019bb716ac71": "{\"id\":\"ac05ba9c-e4e5-471b-ac36-019bb716ac71\",\"timestamp\":\"2020-02-01T19:48:37.127Z\",\"humidity\":2,\"temperature\":3,\"dust\":4,\"gas\":5,\"volume\":7,\"light\":8,\"pressure\":6,\"homebaseId\":1}"
     }
   }
 }

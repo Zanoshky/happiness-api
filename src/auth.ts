@@ -134,6 +134,7 @@ export class MyAuthAuthenticationStrategyProvider implements Provider<Authentica
             ExtractJwt.fromUrlQueryParameter('access_token'),
           ]),
         },
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
         (payload, done) => this.verifyToken(payload, done),
       );
 
