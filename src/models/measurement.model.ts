@@ -48,6 +48,11 @@ export class Measurement extends Entity {
   })
   light?: number;
 
+  @property({
+    type: 'number',
+  })
+  pressure?: number;
+
   @belongsTo(() => Homebase)
   homebaseId: number;
 

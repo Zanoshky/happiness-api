@@ -1,7 +1,7 @@
 {
   "ids": {
     "Homebase": 4,
-    "Measurement": 84,
+    "Measurement": 85,
     "User": 2,
     "Role": 2,
     "UserRole": 2
@@ -73,7 +73,8 @@
       "6238378a-2c2b-449b-a6ed-aa4ef4c91d71": "{\"id\":\"6238378a-2c2b-449b-a6ed-aa4ef4c91d71\",\"timestamp\":\"2019-12-10T18:15:09.887Z\",\"humidity\":37,\"temperature\":22,\"dust\":812,\"gas\":525,\"volume\":84,\"light\":507,\"homebaseId\":1}",
       "37497ae1-704b-46eb-90d9-3d7b84bffd90": "{\"id\":\"37497ae1-704b-46eb-90d9-3d7b84bffd90\",\"timestamp\":\"2019-12-10T18:15:10.910Z\",\"humidity\":32,\"temperature\":20,\"dust\":877,\"gas\":408,\"volume\":57,\"light\":508,\"homebaseId\":1}",
       "3f077ba0-0312-4acf-91f6-011fc298b630": "{\"id\":\"3f077ba0-0312-4acf-91f6-011fc298b630\",\"timestamp\":\"2019-12-10T18:15:11.926Z\",\"humidity\":32,\"temperature\":25,\"dust\":828,\"gas\":564,\"volume\":61,\"light\":514,\"homebaseId\":1}",
-      "5171302c-04ab-48d9-864d-938c728f898d": "{\"id\":\"5171302c-04ab-48d9-864d-938c728f898d\",\"timestamp\":\"2019-12-10T18:15:12.947Z\",\"humidity\":37,\"temperature\":29,\"dust\":814,\"gas\":534,\"volume\":69,\"light\":524,\"homebaseId\":1}"
+      "5171302c-04ab-48d9-864d-938c728f898d": "{\"id\":\"5171302c-04ab-48d9-864d-938c728f898d\",\"timestamp\":\"2019-12-10T18:15:12.947Z\",\"humidity\":37,\"temperature\":29,\"dust\":814,\"gas\":534,\"volume\":69,\"light\":524,\"homebaseId\":1}",
+      "432c310d-9b80-4321-8fa6-65d17ad2f44e": "{\"id\":\"432c310d-9b80-4321-8fa6-65d17ad2f44e\",\"timestamp\":\"2020-02-01T19:08:01.275Z\",\"humidity\":2,\"temperature\":3,\"dust\":4,\"gas\":5,\"volume\":7,\"light\":8,\"pressure\":6,\"homebaseId\":1}"
     }
   }
 }

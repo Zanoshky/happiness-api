@@ -1,7 +1,7 @@
 import {get, getModelSchemaRef, param, Request, RestBindings} from '@loopback/rest';
 import {repository} from '@loopback/repository';
 import {inject} from '@loopback/context';
-import {Status} from '../models';
+import {Status, Measurement} from '../models';
 import {MeasurementRepository} from '../repositories';
 import {HAPPINESS_CALCULATOR_SERVICE, HappinessCalculatorService} from '../services/happinessCalculator.service';
 import {GraphChart} from '../providers';
@@ -35,7 +35,7 @@ export class StatusController {
     const lastMeasurements = await this.measurementRepository.find({
       where: {homebaseId},
       order: ['timestamp DESC'],
-      limit: 10,
+      limit: 1,
     });
 
     const results = this.happinessCalculator.calculate(lastMeasurements.reverse());
@@ -43,26 +43,39 @@ export class StatusController {
   }
 
   // Map to `GET /status/{homebaseId}` for a specific home base
-  @get('/current/{homebaseId}', {
+  @get('/measurements/{homebaseId}/{humidity}/{temperature}/{dust}/{gas}/{pressure}/{volume}/{light}', {
     responses: {
       '200': {
-        description: 'Array of Statuses',
+        description: 'Insert of new measurement',
         content: {
           'application/json': {
-            schema: {type: 'array', items: getModelSchemaRef(Status)},
+            schema: {type: 'array', items: getModelSchemaRef(Measurement)},
           },
         },
       },
     },
   })
-  async current(@param.path.number('homebaseId') homebaseId: number): Promise<number[]> {
-    const lastMeasurement = await this.measurementRepository.find({
-      where: {homebaseId},
-      order: ['timestamp DESC'],
-      limit: 1,
-    });
+  async insertStatus(
+    @param.path.number('homebaseId') homebaseId: number,
+    @param.path.number('humidity') humidity: number,
+    @param.path.number('temperature') temperature: number,
+    @param.path.number('dust') dust: number,
+    @param.path.number('gas') gas: number,
+    @param.path.number('pressure') pressure: number,
+    @param.path.number('volume') volume: number,
+    @param.path.number('light') light: number,
+  ): Promise<Measurement> {
+    const measurement = {
+      homebaseId,
+      humidity,
+      temperature,
+      gas,
+      dust,
+      pressure,
+      volume,
+      light,
+    };
 
-    const results = this.happinessCalculator.calculateCurrent(lastMeasurement);
-    return Promise.resolve(results);
+    return this.measurementRepository.create(measurement);
   }
 }
