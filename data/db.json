@@ -1,8 +1,8 @@
 {
   "ids": {
     "Homebase": 4,
-    "Measurement": 92,
-    "User": 12,
+    "Measurement": 2,
+    "User": 2,
     "Role": 2,
     "UserRole": 2
   },
@@ -23,6 +23,6 @@
     },
     "Measurement": {
       "83e126a9-a689-4c92-8ae3-4c6e01f438c8": "{\"id\":\"83e126a9-a689-4c92-8ae3-4c6e01f438c8\",\"timestamp\":\"2019-12-10T18:08:31.943Z\",\"humidity\":31,\"temperature\":20,\"dust\":804,\"gas\":806,\"volume\":37,\"light\":501,\"homebaseId\":1}"
-    }
+      }
   }
 }

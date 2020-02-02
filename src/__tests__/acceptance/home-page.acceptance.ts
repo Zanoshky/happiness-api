@@ -2,6 +2,8 @@ import {Client} from '@loopback/testlab';
 import {ApiApplication} from '../..';
 import {setupApplication} from './test-helper';
 
+const pjson = require('../../../package.json');
+
 describe('HomePage', () => {
   let app: ApiApplication;
   let client: Client;
@@ -33,6 +35,6 @@ describe('HomePage', () => {
     await client
       .get('/')
       .expect(200)
-      .expect(/Version 1.0.3</);
+      .expect(new RegExp(pjson.version, 'gi'));
   });
 });
