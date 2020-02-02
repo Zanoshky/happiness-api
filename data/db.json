@@ -8,7 +8,7 @@
   },
   "models": {
     "User": {
-      "30f822b3-51c8-46cf-b791-77a546e8c3c0": "{\"id\": \"30f822b3-51c8-46cf-b791-77a546e8c3c0\", \"password\": \"26E62DA051C403CD64FB5BC03355AA65C8FA9C646AF5D1750174B45DEEA0A1F652750AC0831DE83289971F13B84FA7F6A6004B7CC17E79A52AFFE132668B0016\", \"email\": \"zanoski.marko@gmail.com\", \"username\": \"team-heisenberg\"}",
+      "30f822b3-51c8-46cf-b791-77a546e8c3c0": "{\"id\": \"30f822b3-51c8-46cf-b791-77a546e8c3c0\", \"password\": \"26E62DA051C403CD64FB5BC03355AA65C8FA9C646AF5D1750174B45DEEA0A1F652750AC0831DE83289971F13B84FA7F6A6004B7CC17E79A52AFFE132668B0016\", \"email\": \"zanoski.marko@gmail.com\", \"username\": \"team-heisenberg\"}"
     },
     "Role": {
       "IOT_DEVICE": "{\"id\": \"IOT_DEVICE\", \"description\": \"IOT Device that can make POST requests to the Backend API.\"}"
@@ -22,7 +22,7 @@
       "3": "{\"name\":\"Heisenberg\",\"id\":3}"
     },
     "Measurement": {
-      "83e126a9-a689-4c92-8ae3-4c6e01f438c8": "{\"id\":\"83e126a9-a689-4c92-8ae3-4c6e01f438c8\",\"timestamp\":\"2019-12-10T18:08:31.943Z\",\"humidity\":31,\"temperature\":20,\"dust\":804,\"gas\":806,\"volume\":37,\"light\":501,\"homebaseId\":1}",
+      "83e126a9-a689-4c92-8ae3-4c6e01f438c8": "{\"id\":\"83e126a9-a689-4c92-8ae3-4c6e01f438c8\",\"timestamp\":\"2019-12-10T18:08:31.943Z\",\"humidity\":31,\"temperature\":20,\"dust\":804,\"gas\":806,\"volume\":37,\"light\":501,\"homebaseId\":1}"
     }
   }
 }
